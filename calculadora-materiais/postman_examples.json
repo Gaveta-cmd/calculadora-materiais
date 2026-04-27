@@ -1,0 +1,44 @@
+{
+  "calculoConcreto": {
+    "url": "http://localhost:8080/api/calculos/concreto",
+    "method": "POST",
+    "description": "Calcula o volume de concreto (m3) da viga baldrame baseando-se no comprimento e espessura das arestas (paredes) e a altura da viga.",
+    "payload": {
+      "alturaViga": 0.40,
+      "arestas": [
+        {
+          "espessura": 0.15,
+          "comprimento": 4.0
+        },
+        {
+          "espessura": 0.15,
+          "comprimento": 3.0
+        }
+      ]
+    }
+  },
+  "calculoTijolos": {
+    "url": "http://localhost:8080/api/calculos/tijolos",
+    "method": "POST",
+    "description": "Calcula a quantidade de tijolos necessarios baseando-se nas dimensoes da parede e descontando a area de aberturas (portas e janelas).",
+    "payload": {
+      "tijolo": {
+        "largura": 0.09,
+        "altura": 0.19,
+        "comprimento": 0.19
+      },
+      "arestas": [
+        {
+          "altura": 3.0,
+          "comprimento": 4.0,
+          "areaAberturas": 2.10
+        },
+        {
+          "altura": 3.0,
+          "comprimento": 3.0,
+          "areaAberturas": 0.0
+        }
+      ]
+    }
+  }
+}
